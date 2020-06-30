@@ -198,7 +198,7 @@ final class FluxBufferTimeout<T, C extends Collection<? super T>> extends Intern
 				}
 			}
 
-			if (flush) {
+			if (flush && requested > 0) {
 				long r = requested;
 				if (r != 0L) {
 					if (r != Long.MAX_VALUE) {
