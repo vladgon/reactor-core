@@ -221,11 +221,6 @@ final class FluxBufferTimeout<T, C extends Collection<? super T>> extends Intern
 						return;
 					}
 				}
-
-				cancel();
-				actual.onError(Exceptions.failWithOverflow(
-						"Could not emit buffer due to lack of requests"));
-				Operators.onDiscardMultiple(v, this.actual.currentContext());
 			}
 		}
 
